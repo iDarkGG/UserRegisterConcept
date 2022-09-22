@@ -20,44 +20,54 @@ namespace UserRegisterConceptUI
         private bool USER_TAKEN = false;
         public void RegisterUser(string email, string newUser, string password, string confPassword)
         {
-            //UserChecker
-            if (newUser != null)
+            if(userData.Count > 0)
             {
-                for (int i = 0; i < userData.Count; i++)
+                //UserChecker
+                if (newUser != null)
                 {
-                    do
+                    for (int i = 0; i < userData.Count; i++)
                     {
-                        if (newUser.Equals(userData.ElementAt(i).userName))
+                        do
                         {
-                            Console.WriteLine("El Nombre de Usuario Ya existe por favor selecciona otro.");
-                            USER_TAKEN = true;
-                        }
-                        else
-                        {
-                            do
+                            if (newUser.Equals(userData.ElementAt(i).userName))
                             {
-                                Console.WriteLine("Por favor ingresa la contraseña.");
-                                if (password.Equals(confPassword))
+                                Console.WriteLine("El Nombre de Usuario Ya existe por favor selecciona otro.");
+                                USER_TAKEN = true;
+                            }
+                            else
+                            {
+                                do
                                 {
-                                    Console.WriteLine("Registrado Correctamente");
-                                    this.userData.Add(new inheritance() {email = email, userName = newUser, password = confPassword, currentID = Generator() });
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Las Contraseñas no Coinciden");
-                                }
-                            } while (password != confPassword);
+                                    Console.WriteLine("Por favor ingresa la contraseña.");
+                                    if (password.Equals(confPassword))
+                                    {
+                                        Console.WriteLine("Registrado Correctamente");
+                                        this.userData.Add(new inheritance() { email = email, userName = newUser, password = confPassword, currentID = Generator() });
+                                        USER_LOG_STATUS = true;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Las Contraseñas no Coinciden");
+                                    }
+                                } while (password != confPassword);
 
 
+                            }
+                        } while (USER_TAKEN);
+                        if (USER_LOG_STATUS)
+                        {
+                            break;
                         }
-                    } while (USER_TAKEN);
-                    if (USER_LOG_STATUS)
-                    {
-                        break;
                     }
-                }
 
+                }
             }
+            else
+            {
+                this.userData.Add(new inheritance() { email = email, userName = newUser, password = confPassword, currentID = Generator() });
+            }
+
+
         }
 
         public void UserLogin(string newUser, string password)
@@ -102,7 +112,10 @@ namespace UserRegisterConceptUI
             }
         }
 
-
+        public bool UserChecker()
+        {
+            return USER_LOG_STATUS;
+        }
         private int Generator() => ++userID;
     }
 }

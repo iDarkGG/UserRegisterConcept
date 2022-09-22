@@ -20,6 +20,7 @@ namespace UserRegisterConceptUI
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            inheritance i = new inheritance();
 
         }
 
