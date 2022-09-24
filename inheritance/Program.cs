@@ -20,6 +20,19 @@ namespace UserRegisterConceptUI
         public static Int32 userID = 0;
         public bool USER_LOG_STATUS = false;
         private bool USER_TAKEN = false;
+
+
+        public inheritance()
+        {
+
+        }
+        public inheritance(string userName, string email, string password)
+        {
+            this.userName = userName;
+            this.email = email;
+            this.password = password;
+        }
+
         public void RegisterUser(string email, string newUser, string password, string confPassword)
         {
             if(userData.Count > 0)

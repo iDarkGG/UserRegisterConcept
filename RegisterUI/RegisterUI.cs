@@ -26,7 +26,7 @@ namespace UserRegisterConceptUI
             string email = txtEmail.Text;
             string password = txtPassword.Text;
             string confPassword = txtConfPass.Text;
-            i.userData.Add(new inheritance { email = email, userName = newUser, password = password });
+            i.userData.Add(new inheritance(newUser, email, password));
             checker = i.UserChecker();
             if(checker == true)
             {
