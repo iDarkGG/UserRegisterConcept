@@ -37,7 +37,10 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtConfPass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -102,19 +105,48 @@
             this.txtUser.Size = new System.Drawing.Size(290, 23);
             this.txtUser.TabIndex = 6;
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 231);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 7;
+            this.txtPassword.Location = new System.Drawing.Point(12, 231);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(100, 23);
+            this.txtPassword.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 213);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 15);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Ingrese su contraseña";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 265);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Confirme su contraseña";
+            // 
+            // txtConfPass
+            // 
+            this.txtConfPass.Location = new System.Drawing.Point(12, 283);
+            this.txtConfPass.Name = "txtConfPass";
+            this.txtConfPass.Size = new System.Drawing.Size(100, 23);
+            this.txtConfPass.TabIndex = 9;
             // 
             // RegisterUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtConfPass);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
@@ -140,6 +172,9 @@
         private TextBox txtEmail;
         private TextBox txtUser;
         private ToolTip toolTip1;
-        private TextBox textBox1;
+        private TextBox txtPassword;
+        private Label label3;
+        private Label label4;
+        private TextBox txtConfPass;
     }
 }
